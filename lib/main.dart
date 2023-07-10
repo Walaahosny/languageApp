@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
+=======
+import 'layouscreen.dart';
+
+>>>>>>> 3029777 (add files)
 void main() {
   runApp(const MyApp());
 }
@@ -13,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+<<<<<<< HEAD
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -32,10 +38,18 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+=======
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: layoutScreen(),
+>>>>>>> 3029777 (add files)
     );
   }
 }
 
+<<<<<<< HEAD
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -123,3 +137,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+=======
+
+>>>>>>> 3029777 (add files)
