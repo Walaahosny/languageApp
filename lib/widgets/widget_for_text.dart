@@ -5,6 +5,7 @@ class text_style extends StatelessWidget {
   const text_style({super.key, required this.text});
 
 final String text;
+
   @override
   Widget build(BuildContext context) {
     return Text(

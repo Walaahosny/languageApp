@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Language App',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(backgroundColor:       Color(0xff472d30),
+      ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

@@ -17,7 +17,6 @@ class Home_Screen extends StatelessWidget {
         title: const text_style(
           text: 'Toku',
         ),
-        backgroundColor: const Color(0xff472d30),
       ),
       body: Column(
         children: [
@@ -26,7 +25,7 @@ class Home_Screen extends StatelessWidget {
             text: 'Numbers',
             pressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const Numbers_Screen();
+                return  Numbers_Screen();
               }));
             },
           ),
