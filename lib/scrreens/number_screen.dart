@@ -4,9 +4,10 @@ import 'package:languageapp/constns/constns.dart';
 import '../models/numbers.dart';
 import '../widgets/container_items_for_number_screen.dart';
 import '../widgets/widget_for_text.dart';
+//ignore: must_be_immutable
 
 class Numbers_Screen extends StatelessWidget {
-  List<Numbers>? numbers = [
+  final List<Numbers>? numbers = [
     Numbers(
         image: 'assets/images/numbers/number_one.png',
         JAText: 'Ichi',
@@ -48,22 +49,44 @@ class Numbers_Screen extends StatelessWidget {
         JAText: 'Ju',
         ENText: 'Ten')
   ];
+
+  Numbers_Screen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(onPressed: () {
-Navigator.pop(context);
-
-          }, icon: const Icon(Icons.arrow_back,color: Kcolor,size: 32,),),
-          title: const text_style(
-            text: 'Numbers',
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Kcolor,
+            size: 32,
           ),
         ),
-        body: ListView.builder(
-            itemCount: numbers!.length,
-            itemBuilder: (context, index) {
-              return container_item_number_screen(number: numbers![index]);
-            }));
+        title: const text_style(
+          text: 'Numbers',
+        ),
+      ),
+      // body: ListView.builder(
+      //     itemCount: numbers!.length,
+      //     itemBuilder: (context, index) {
+      //       return container_item_number_screen(number: numbers![index]);
+      //     })
+//used with for loop
+      body: ListView(
+        children: gitList(numbers!),
+      ),
+    );
+  }
+
+//used to build item instead of repeat widget and work as listview.builder
+  List<Widget> gitList(List<Numbers> num) {
+    List<Widget> item = [];
+    for (int i = 0; i < numbers!.length; i++) {
+      item.add(container_item_number_screen(number: num[i]));
+    }
+    return item;
   }
 }
