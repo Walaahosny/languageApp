@@ -34,7 +34,7 @@ class Home_Screen extends StatelessWidget {
             text: 'Phrases',
             pressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const phrases_screen();
+                return  phrases_screen();
               }));
             },
           ),
@@ -45,7 +45,7 @@ class Home_Screen extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const familyMembers_screen()));
+                      builder: (context) =>  familyMembers_screen()));
             },
           ),
           Container_Home_Screen(
@@ -55,7 +55,7 @@ class Home_Screen extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const colors_screen()));
+                      builder: (context) =>  colors_screen()));
             },
           )
         ],

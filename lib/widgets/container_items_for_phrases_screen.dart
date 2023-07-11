@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:languageapp/models/numbers.dart';
+import 'package:languageapp/models/itemModel.dart';
 import 'package:languageapp/widgets/widget_for_text.dart';
-
 import '../constns/constns.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class container_item_number_screen extends StatelessWidget {
-  const container_item_number_screen({super.key, required this.number});
-  final Numbers number;
+class container_item_Phrases_screen extends StatelessWidget {
+  const container_item_Phrases_screen ({super.key, required this.number,required this.color});
+  final ItemModel number;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -14,15 +15,16 @@ class container_item_number_screen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Color(0xffffe1a8),
+          color: color,
         ),
         height: 200,
         child: Row(
           children: [
-            Image.asset('${number.image}'),
+
             Padding(
               padding: const EdgeInsets.only(left: 40.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   text_style(
@@ -36,7 +38,14 @@ class container_item_number_screen extends StatelessWidget {
             ),
             Spacer(),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  try{final player = AudioPlayer();
+                  player.play(AssetSource(number.sound));}
+                  catch(e){
+                    print(e.toString())
+                    ;                      }
+
+                },
                 icon: const Icon(
                   Icons.play_arrow,
                   color: Kcolor,
